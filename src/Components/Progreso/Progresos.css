@@ -1,0 +1,50 @@
+.circulo {
+    display: flex; /* Esto activa el modelo de caja flexible (flexbox) */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+  }
+
+/* Estilos para el aro circular */
+.circular-progress-container {
+    width: 100px; /* Tamaño del aro */
+    height: 100px; /* Tamaño del aro */
+    position: relative;
+    margin-bottom: 20px;
+    
+  }
+  
+  .circular-progress-circle {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: #ccc; /* Color del aro */
+    stroke-width: 8; /* Grosor del aro */
+    
+  }
+  
+  .circular-progress-bar {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: #61dafa; /* Color del aro de progreso */
+    stroke-width: 8; /* Grosor del aro de progreso */
+    stroke-dasharray: 282; /* Circunferencia del aro */
+    stroke-dashoffset: calc(282 - (250 * var(--percentage))); /* Offset del aro de progreso */
+    transition: stroke-dashoffset 0.3s ease; /* Animación de transición */
+    transform: rotate(-90deg); /* Gira el aro de progreso para que comience en la posición de las 12 */
+    transform-origin: 50% 50%; /* Establece el punto de origen de la transformación en el centro */
+  }
+  
+  .circular-progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px; /* Tamaño del texto */
+    color: #61dafa; /* Color del texto */
+    z-index: 1; /* Asegura que el texto esté por encima del aro de progreso */
+    text-anchor: middle; /* Alinea el texto horizontalmente en el centro */
+    dominant-baseline: middle; /* Alinea el texto verticalmente en el centro */
+    fill: #00a0e4; /* Color del texto del porcentaje */
+  }
+  
